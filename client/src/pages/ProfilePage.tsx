@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { User, Mail, Calendar, Edit2 } from 'lucide-react';
+import { User, Mail, Calendar, Edit2, LogOut } from 'lucide-react';
 import { format } from 'date-fns';
 
 const ProfilePage: React.FC = () => {
-    const { user, updateUser } = useAuth();
+    const { user, updateUser, logout } = useAuth();
+    const navigate = useNavigate();
     const [isEditing, setIsEditing] = useState(false);
     const [editName, setEditName] = useState('');
     const [loading, setLoading] = useState(false);
@@ -144,6 +146,17 @@ const ProfilePage: React.FC = () => {
                             <p className="text-gray-900 font-medium">{format(new Date(), 'MMMM yyyy')}</p>
                         </div>
                     </div>
+
+                    <button
+                        onClick={() => {
+                            logout();
+                            navigate('/login');
+                        }}
+                        className="w-full flex md:hidden items-center justify-center space-x-2 p-4 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors mt-8"
+                    >
+                        <LogOut size={20} />
+                        <span className="font-medium">Logout</span>
+                    </button>
                 </div>
             </div>
         </div>
