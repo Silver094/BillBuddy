@@ -12,6 +12,9 @@ A full-stack expense sharing application built with React, Node.js, TypeScript, 
 - **Dashboard**: Overview of your groups and activities.
 - **Social Sharing**: Share the app with friends via link.
 - **Profile Management**: Update your name and profile details.
+- **Advanced Splitting**: Support for unequal splits (percentages, shares, exact amounts).
+- **Activity Feed**: Track recent group activities and expenses.
+- **Friend System**: Add and manage friends independent of groups.
 
 ## Tech Stack
 
@@ -73,24 +76,11 @@ A full-stack expense sharing application built with React, Node.js, TypeScript, 
 ```
 /
 ├── client/                 # Frontend React App
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── context/        # React Context (Auth)
-│   │   ├── pages/          # Page components
-│   │   ├── lib/            # Utilities (API client)
-│   │   └── ...
 ├── server/                 # Backend Node App
-│   ├── src/
-│   │   ├── controllers/    # Request handlers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   ├── middleware/     # Auth middleware
-│   │   └── ...
 ```
 
 ## Future Improvements
 
-- Unequal splits (percentages, shares).
-- Activity feed.
-- Email notifications.
-- Friend system (independent of groups).
+- Email notifications (currently disabled).
+- Mobile App (React Native).
+
